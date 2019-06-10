@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="nav-wrap">
+        <h1>Employee List</h1>
+        <div class="buttons">
+          <button routerLink="/add">Add</button>
+          <div class="search">
+              <p><input type="search"
+                placeholder="Search"
+                aria-label="Search"
+                [(ngModel)]="searchEmployeeByName">
+          </div>
+        </div>
+    </div>
+    <div class="card-wrap" >
+        <div class="card" *ngFor="let n of (employeeList | searchEmployee: searchEmployeeByName)">
+            <div class="image">
+              <img [src]="n.image" alt="Employee image">
+            </div>
+            <div class="details">
+                <div class="more">
+                    <button id="more" *ngIf="!isCollapsed" (click)="toggleCollapse(n.name)">LESS</button>
+                    <button id="more" *ngIf="isCollapsed" (click)="toggleCollapse()">MORE</button>
+                </div>
+              <p>Id: {{n.id}} </p>
+              <h3> {{n.name}} {{n.lastname}}</h3>
+
+              <div class="more-info" *ngIf="!isCollapsed">
+                <p id="desc" > {{n.description}} </p>
+                <div class="contacts">
+                    <p> Contacts: {{n.contacts}} </p>
+                    <p> Address: {{n.address}} </p>
+                    <p> Instagram: {{n.instagram}} </p>
+                </div>
+              </div>
+
+          </div>
+            <div  class="delete">
+              <button id="update" routerLink="/update/{{n.id}}">Edit</button>
+              <button id="delete" (click)="onDelete(n.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Update Employee</h2>
+    <div class="form cls">
+        <a routerLink="">Go Back</a>
+        <!-- public id: string; changed it for time stamp
+      public name: string;
+      public lastname: string;
+      public description: string;
+      public image: string; -->
+    <form #EmployeeUpdateForm="ngForm" (ngSubmit)="onSubmit(EmployeeUpdateForm.value)">
+        <input type="text" 
+        [(ngModel)]="employee.id"
+        #id="ngModel"
+        name="id"
+        value={{date}}
+        class="form-control"
+        placeholder="Id"
+        required>
+
+        <div [hidden]="id.valid || id.pristine" >Id is required</div>
+        <br>
+        <input
+        type="text"
+        [(ngModel)]="employee.name"
+        class="form-control"
+        name="name"
+        placeholder="Name"
+        required>
+        <br>
+
+        <input
+        type="text"
+        [(ngModel)]="employee.lastname"
+        class="form-control"
+        name="lastname"
+        placeholder="Last Name"
+        required>
+        <br>
+        <textarea
+        placeholder="Description..."
+        class="form-control"
+        [(ngModel)]="employee.description"
+        name="description"
+        required rows="20"></textarea>
+        <br>
+        <input type="text"
+        [(ngModel)]="employee.image"
+        class="form-control"
+        name="image"
+        placeholder="Image link"
+        required>
+        <br>
+        <input type="file" ngModel name="image" placeholder="Change Image">
+        <br>
+        <button type="submit">Update</button>
+      </form>
+    </div>
+  </div>

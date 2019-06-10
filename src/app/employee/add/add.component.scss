@@ -1,0 +1,55 @@
+*{
+    font-family: Century Gothic;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg,rgba(255, 225, 170, 0.897),rgba(227, 137, 255, 0.767)),url(../assets/videoblocks-bright-colors-minimal-design-4k-animation-background-simple-retro-geometric-shapes-motion-footage_b_y6dvwtm_thumbnail-full04.png);
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+a {
+    color: white;
+    text-decoration: none;
+    margin: 40px 0px;
+    padding: 30px;
+    border-bottom-right-radius: 100px;
+    background: rgb(73, 6, 6);
+}
+.form{
+    width: 100vw;
+    height: auto;
+    background: #171717;
+}
+input, textarea{
+    outline: none;
+    width: 200px;
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    background: rgb(47, 47, 47);
+    margin: 10px 10px;
+    color: white;
+    outline: none;
+    border-bottom: solid 2px white;
+}
+form{
+    padding-top: 10px;
+    margin: auto;
+    text-align: center;
+}
+form button{
+    background:#10E813;
+    border: none;
+    padding: 10px 20px;
+    width: 200px;
+    margin: 20px 0px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    
+}
+.list{
+    background: url(../assets/geometric-design-wallpaper.jpg);
+}
